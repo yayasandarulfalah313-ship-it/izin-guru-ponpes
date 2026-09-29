@@ -4,7 +4,10 @@ const GAS_URL = 'https://script.google.com/macros/s/AKfycbxNGuUgKW3rSPDx3GIFsHSY
 // Auto-fill Hari, Tanggal, dan Jam saat ini
 document.addEventListener('DOMContentLoaded', () => {
   const now = new Date();
-  const days = ['Minggu', 'Senin', 'Selasa', 'Rabu', 'Kamis', 'Jumat', 'Sabtu'];
+  // Urutan array disesuaikan dengan index hari JavaScript (0=Minggu/Ahad, 1=Senin, dst.)
+  const days = ['Ahad', 'Senin', 'Selasa', 'Rabu', 'Kamis', 'Jumat', 'Sabtu'];
+  
+  // Auto-pilih hari ini sebagai default di dropdown
   document.getElementById('hari').value = days[now.getDay()];
   
   const yyyy = now.getFullYear();
@@ -51,8 +54,23 @@ document.getElementById('izinForm').addEventListener('submit', function(e) {
       status.style.color = 'green';
       status.textContent = '✅ ' + data.message;
       document.getElementById('izinForm').reset();
-      // Reset tanggal & jam ke sekarang
-      location.reload(); 
+      
+      // Kembalikan nilai default setelah reset
+      const now = new Date();
+      const days = ['Ahad', 'Senin', 'Selasa', 'Rabu', 'Kamis', 'Jumat', 'Sabtu'];
+      document.getElementById('hari').value = days[now.getDay()];
+      
+      const yyyy = now.getFullYear();
+      const mm = String(now.getMonth() + 1).padStart(2, '0');
+      const dd = String(now.getDate()).padStart(2, '0');
+      document.getElementById('tanggal').value = `${yyyy}-${mm}-${dd}`;
+      
+      const hh = String(now.getHours()).padStart(2, '0');
+      const min = String(now.getMinutes()).padStart(2, '0');
+      document.getElementById('jam').value = `${hh}:${min}`;
+      
+      // Opsional: hapus location.reload() jika ingin halaman tetap di tempat tanpa refresh
+      // location.reload(); 
     } else {
       throw new Error(data.message);
     }
