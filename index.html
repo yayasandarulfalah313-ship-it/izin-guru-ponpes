@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Form Izin - IZIN GURU PON-PES</title>
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+  <header>
+    <h1>IZIN GURU PON-PES</h1>
+    <p>Sistem Pengajuan Izin Meninggalkan Ponpes DDI</p>
+  </header>
+  
+  <nav class="nav-links">
+    <a href="index.html" class="active">Form Izin</a>
+    <a href="dashboard.html">Dashboard Laporan</a>
+  </nav>
+
+  <div class="container">
+    <h2 style="text-align: center; color: var(--primary-green); margin-bottom: 1.5rem;">Formulir Pengajuan Izin</h2>
+    <form id="izinForm">
+      <div class="form-group">
+        <label for="nama">Nama Lengkap</label>
+        <input type="text" id="nama" name="nama" required placeholder="Masukkan nama lengkap">
+      </div>
+      
+      <div class="form-group">
+        <label for="jabatan">Jabatan</label>
+        <input type="text" id="jabatan" name="jabatan" required placeholder="Contoh: Guru Mapel, Wali Kelas, Pengurus">
+      </div>
+
+      <div class="form-group">
+        <label for="tingkatan">Tingkatan</label>
+        <select id="tingkatan" name="tingkatan" required>
+          <option value="">-- Pilih Tingkatan --</option>
+          <option value="MA">MA</option>
+          <option value="MTs">MTs</option>
+          <option value="SMP">SMP</option>
+          <option value="MIS">MIS</option>
+          <option value="TK">TK</option>
+          <option value="Pondok">Pondok</option>
+        </select>
+      </div>
+
+      <div class="form-group">
+        <label for="hari">Hari</label>
+        <input type="text" id="hari" name="hari" required readonly>
+      </div>
+
+      <div class="form-group">
+        <label for="tanggal">Tanggal</label>
+        <input type="date" id="tanggal" name="tanggal" required>
+      </div>
+
+      <div class="form-group">
+        <label for="jam">Jam Keluar</label>
+        <input type="time" id="jam" name="jam" required>
+      </div>
+
+      <div class="form-group">
+        <label for="alasan">Alasan Keluar</label>
+        <textarea id="alasan" name="alasan" rows="4" required placeholder="Jelaskan alasan meninggalkan ponpes..."></textarea>
+      </div>
+
+      <button type="submit" class="btn-submit" id="submitBtn">Kirim Pengajuan Izin</button>
+      <p id="statusMessage" style="text-align: center; margin-top: 1rem; font-weight: bold;"></p>
+    </form>
+  </div>
+
+  <script src="js/form.js"></script>
+</body>
+</html>
