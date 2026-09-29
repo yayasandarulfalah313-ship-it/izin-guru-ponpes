@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Dashboard - IZIN GURU PON-PES</title>
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+  <header>
+    <h1>IZIN GURU PON-PES</h1>
+    <p>Dashboard Laporan Izin Meninggalkan Ponpes DDI</p>
+  </header>
+  
+  <nav class="nav-links">
+    <a href="index.html">Form Izin</a>
+    <a href="dashboard.html" class="active">Dashboard Laporan</a>
+  </nav>
+
+  <div class="container" style="max-width: 1200px;">
+    <h2 style="text-align: center; color: var(--primary-green); margin-bottom: 1.5rem;">Data Laporan Izin</h2>
+    
+    <div class="tabs" id="tabContainer">
+      <button class="tab-btn active" onclick="showTab('MA')">MA</button>
+      <button class="tab-btn" onclick="showTab('MTs')">MTs</button>
+      <button class="tab-btn" onclick="showTab('SMP')">SMP</button>
+      <button class="tab-btn" onclick="showTab('MIS')">MIS</button>
+      <button class="tab-btn" onclick="showTab('TK')">TK</button>
+      <button class="tab-btn" onclick="showTab('Pondok')">Pondok</button>
+    </div>
+
+    <div id="loading" class="loading">Memuat data dari database...</div>
+    <div id="error" class="error" style="display: none;"></div>
+
+    <div id="tableContainer" class="table-container" style="display: none;">
+      <table id="dataTable">
+        <thead>
+          <tr>
+            <th>No</th>
+            <th>Nama Lengkap</th>
+            <th>Jabatan</th>
+            <th>Tingkatan</th>
+            <th>Hari</th>
+            <th>Tanggal</th>
+            <th>Jam</th>
+            <th>Alasan Keluar</th>
+          </tr>
+        </thead>
+        <tbody id="tableBody">
+          <!-- Data akan diisi oleh JavaScript -->
+        </tbody>
+      </table>
+    </div>
+  </div>
+
+  <script src="js/dashboard.js"></script>
+</body>
+</html>
