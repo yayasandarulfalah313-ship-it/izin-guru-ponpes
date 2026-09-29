@@ -1,5 +1,5 @@
-// GANTI DENGAN URL WEB APP APPS SCRIPT ANDA DARI FASE 1
-const GAS_URL = 'GANTI_DENGAN_URL_WEB_APP_APPS_SCRIPT_ANDA_DISINI';
+// URL Web App Apps Script sudah diperbarui
+const GAS_URL = 'https://script.google.com/macros/s/AKfycbxNGuUgKW3rSPDx3GIFsHSYF-wdItxrkmp8TRw8jQLx-SiFXggvC64G1scdrIhVpezlFg/exec';
 
 // Auto-fill Hari, Tanggal, dan Jam saat ini
 document.addEventListener('DOMContentLoaded', () => {
